@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Under Construction | AQUATECH Engineering</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="AQUATECH technical documents and manuals are coming online soon. Subscribe to receive engineering publication notices.">
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💧</text></svg>">
+
+  <!-- CDNs -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom Stylesheets -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/dark-mode.css" rel="stylesheet">
+  <link href="assets/css/rtl.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div id="page-loader" class="page-loader" aria-hidden="true">
+    <div class="loader-waves">
+      <div class="loader-wave-element"></div>
+      <div class="loader-wave-element"></div>
+      <div class="loader-wave-element"></div>
+    </div>
+    <h2 class="fs-6 mt-3 tracking-widest text-uppercase text-muted">AQUATECH</h2>
+  </div>
+
+  <!-- WebGL Background Canvas -->
+  <div id="webgl-canvas-container" class="canvas-bg" aria-hidden="true"></div>
+
+  <!-- Main Container -->
+  <main class="d-flex align-items-center justify-content-center text-center" style="min-height: 100vh;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          
+          <div class="border bg-white p-5 shadow-sm text-center">
+            
+            <!-- Mini Logo -->
+            <a class="footer-logo justify-content-center mb-4" href="index.html">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+              </svg>
+              AQUATECH
+            </a>
+
+            <h1 class="h3 mb-3 fw-bold">Engineering Portal Deploying</h1>
+            <p class="text-secondary mb-4">We are compiling technical manuals and compliance blueprints. Online library access is scheduled to open shortly.</p>
+            
+            <!-- Countdown Grid -->
+            <div class="row g-2 mb-5 justify-content-center">
+              <div class="col-3">
+                <div class="border bg-light p-3">
+                  <div id="days" class="fs-3 fw-bold text-info">00</div>
+                  <div class="fs-9 text-uppercase tracking-wider text-muted">Days</div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="border bg-light p-3">
+                  <div id="hours" class="fs-3 fw-bold text-info">00</div>
+                  <div class="fs-9 text-uppercase tracking-wider text-muted">Hours</div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="border bg-light p-3">
+                  <div id="minutes" class="fs-3 fw-bold text-info">00</div>
+                  <div class="fs-9 text-uppercase tracking-wider text-muted">Mins</div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="border bg-light p-3">
+                  <div id="seconds" class="fs-3 fw-bold text-info">00</div>
+                  <div class="fs-9 text-uppercase tracking-wider text-muted">Secs</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Signup Form -->
+            <form class="premium-form newsletter-form" novalidate>
+              <div class="form-group text-start">
+                <label for="soon-email">Subscribe to Library Alerts</label>
+                <div class="d-flex gap-2">
+                  <input type="email" id="soon-email" class="form-control" required placeholder="john@company.com">
+                  <button type="submit" class="btn btn-premium">Notify Me</button>
+                </div>
+                <div class="invalid-feedback"></div>
+              </div>
+            </form>
+
+            <div class="mt-4 pt-3 border-top">
+              <a href="index.html" class="text-info fs-7 text-decoration-none">← Return to Main Page</a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- JS CDNs -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Countdown Script -->
+  <script>
+    // Initialize the countdown to 45 days in the future
+    const launchDate = new Date().getTime() + (45 * 24 * 60 * 60 * 1000);
+
+    const updateTimer = setInterval(() => {
+      const now = new Date().getTime();
+      const difference = launchDate - now;
+
+      if (difference <= 0) {
+        clearInterval(updateTimer);
+        return;
+      }
+
+      const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((difference % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent = d.toString().padStart(2, '0');
+      document.getElementById('hours').textContent = h.toString().padStart(2, '0');
+      document.getElementById('minutes').textContent = m.toString().padStart(2, '0');
+      document.getElementById('seconds').textContent = s.toString().padStart(2, '0');
+    }, 1000);
+  </script>
+</body>
+</html>

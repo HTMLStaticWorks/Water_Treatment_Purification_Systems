@@ -1,0 +1,122 @@
+/*
+ * Dark Mode Theme Overrides
+ * Near-black backgrounds, high contrast text, and glowing accents
+ */
+
+[data-theme="dark"] {
+  --bg-primary: #030712; /* Near Black */
+  --bg-secondary: #0b1329; /* Deep Tech Blue-Gray */
+  --text-primary: #f8fafc; /* High Contrast White */
+  --text-secondary: #94a3b8; /* Muted Slate Gray */
+  --accent-color: #38bdf8; /* Bright Electric Blue */
+  --accent-light: rgba(56, 189, 248, 0.1);
+  --border-color: #1e293b; /* Dark Borders */
+  --glass-bg: rgba(3, 7, 18, 0.75);
+  --glass-border: rgba(30, 41, 59, 0.8);
+  --card-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Base Adjustments */
+[data-theme="dark"] body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Custom adjustments for elements */
+[data-theme="dark"] .btn-premium {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+}
+
+[data-theme="dark"] .btn-premium:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--bg-primary);
+}
+
+[data-theme="dark"] .btn-premium-outline {
+  color: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+[data-theme="dark"] .btn-premium-outline:hover {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+/* Inputs & Form Controls */
+[data-theme="dark"] .form-control {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .form-control:focus {
+  background-color: var(--bg-secondary);
+  border-color: var(--accent-color);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .form-control::placeholder {
+  color: #64748b;
+}
+
+/* Bootstrap Accordion Overrides */
+[data-theme="dark"] .accordion-item {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .accordion-button {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .accordion-button:not(.collapsed) {
+  background-color: var(--border-color);
+  color: var(--accent-color);
+}
+
+[data-theme="dark"] .accordion-button::after {
+  filter: invert(1);
+}
+
+/* Tables in Dark Mode */
+[data-theme="dark"] .table-premium th {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--border-color);
+}
+
+[data-theme="dark"] .table-premium td {
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+/* Offcanvas and Modal */
+[data-theme="dark"] .offcanvas {
+  background-color: var(--bg-primary);
+  border-left: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .offcanvas-header {
+  border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .modal-content {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+/* Timeline Custom Dark Rules */
+[data-theme="dark"] .timeline-item::after {
+  background-color: var(--bg-primary);
+}
+
+/* Text selections & links */
+[data-theme="dark"] a {
+  color: var(--accent-color);
+}

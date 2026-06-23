@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solutions | AQUATECH Advanced Water Treatment</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Explore AQUATECH industrial, municipal, and residential water treatment solutions. RO systems, ZLD plants, drinking water grids, and home filter products.">
+  <meta name="keywords" content="Reverse Osmosis, Zero Liquid Discharge, Wastewater Treatment, Water Plants, Home Filters">
+
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💧</text></svg>">
+
+  <!-- CDNs -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom Stylesheets -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/dark-mode.css" rel="stylesheet">
+  <link href="assets/css/rtl.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div id="page-loader" class="page-loader" aria-hidden="true">
+    <div class="loader-waves">
+      <div class="loader-wave-element"></div>
+      <div class="loader-wave-element"></div>
+      <div class="loader-wave-element"></div>
+    </div>
+    <h2 class="fs-6 mt-3 tracking-widest text-uppercase text-muted">AQUATECH</h2>
+  </div>
+
+  <!-- WebGL Background Canvas -->
+  <div id="webgl-canvas-container" class="canvas-bg" aria-hidden="true"></div>
+
+  <!-- Header Section -->
+  <header class="fixed-top">
+    <nav class="navbar premium-navbar navbar-expand-lg py-0" aria-label="Main Navigation">
+      <div class="container">
+        
+        <a class="navbar-brand" href="index.html">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+          </svg>
+          AQUATECH
+        </a>
+
+        <div class="d-none d-lg-flex align-items-center gap-3 order-lg-3">
+          <button id="theme-toggle" class="toggle-btn" aria-label="Toggle dark mode"></button>
+          <button id="dir-toggle" class="toggle-btn" aria-label="Toggle language direction">RTL</button>
+          <a href="contact.html" class="btn btn-premium btn-sm">Request Consultation</a>
+        </div>
+
+        <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="solutions.html">Solutions</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="industries.html">Industries</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+              
+              <li class="nav-item d-lg-none mt-4">
+                <div class="d-flex gap-3 align-items-center justify-content-center">
+                  <button onclick="document.getElementById('theme-toggle').click()" class="toggle-btn">🌓</button>
+                  <button onclick="document.getElementById('dir-toggle').click()" class="toggle-btn">RTL/LTR</button>
+                </div>
+              </li>
+              <li class="nav-item d-lg-none mt-3">
+                <a href="contact.html" class="btn btn-premium w-100">Request Consultation</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <!-- Solutions Content -->
+  <main class="py-5" style="margin-top: var(--header-height);">
+    
+    <!-- Solutions Page Hero -->
+    <section class="py-5 text-center">
+      <div class="container py-4">
+        <span class="text-uppercase tracking-widest text-muted fs-7">Global Capabilities</span>
+        <h1 class="section-title mt-2 mb-4">Engineering Clean Water Solutions</h1>
+        <p class="body-lead max-w-600 mx-auto">We design next-generation reverse osmosis loops, municipal scale clean grids, and residential filtration devices using advanced physics and compliance standards.</p>
+      </div>
+    </section>
+
+    <!-- Detailed Service Sections -->
+    <section class="py-5">
+      <div class="container">
+        
+        <!-- 1. Industrial Water Treatment -->
+        <div class="row align-items-center g-5 mb-5 pb-5">
+          <div class="col-lg-6">
+            <div class="p-2 border border-info-subtle bg-light-gradient">
+              <img src="assets/images/industrial-solution.png" alt="Industrial water purification plant" class="img-fluid w-100">
+            </div>
+          </div>
+          <div class="col-lg-6 text-start">
+            <span class="text-uppercase tracking-widest text-info fs-8 fw-semibold">Industrial Division</span>
+            <h2 class="h1 mt-2 mb-4">Industrial Water Treatment</h2>
+            <p class="text-secondary mb-4">High-throughput purification systems designed to achieve rigorous processing specifications and secure regulatory permits. Perfect for heavy manufacturing, mining, and food production plants.</p>
+            
+            <h3 class="h6 text-uppercase mb-3 fw-bold text-muted">Core Sub-systems:</h3>
+            <ul class="list-unstyled d-flex flex-column gap-2 mb-5">
+              <li class="d-flex align-items-center gap-2">
+                <i data-lucide="check" class="text-info w-5 h-5"></i> <strong>RO Systems:</strong> Industrial reverse osmosis modules with up to 98% salt rejection.
+              </li>
+              <li class="d-flex align-items-center gap-2">
+                <i data-lucide="check" class="text-info w-5 h-5"></i> <strong>Wastewater Treatment:</strong> Biological reactors and active clarification networks.
+              </li>
+              <li class="d-flex align-items-center gap-2">
+                <i data-lucide="check" class="text-info w-5 h-5"></i> <strong>Effluent Treatment:</strong> Chemical oxidation systems for organic pollutant reduction.
+              </li>
+              <li class="d-flex align-items-center gap-2">
+                <i data-lucide="check" class="text-info w-5 h-5"></i> <strong>Zero Liquid Discharge (ZLD):</strong> Thermal evaporators to reuse 100% of wastewater.
+              </li>
+            </ul>
+
+            <div class="d-flex gap-3">
+              <a href="service-detail.html" class="btn btn-premium">View Technical Specs</a>
+              <a href="contact.html?type=industrial" class="btn btn-premium-outline">Request Industrial Estimate</a>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-5 opacity-10">
+
+        <!-- 2. Municipal Solutions -->
+        <div class="row align-items-center g-5 mb-5 pb-5 flex-lg-row-reverse">
+          <div class="col-lg-6">
+            <div class="p-2 border border-info-subtle bg-light-gradient">
+              <img src="assets/images/municipal-solution.png" alt="Large scale drinking water plant" class="img-fluid w-100">
+            </div>
+          </div>
+          <div class="col-lg-6 text-start">
+            <span class="text-uppercase tracking-widest text-info fs-8 fw-semibold">Municipal Division</span>
+            <h2 class="h1 mt-2 mb-4">Municipal Solutions</h2>
+            <p class="text-secondary mb-4">Large-scale public systems configured to filter massive volumes of water. Engineered with heavy durability standards to ensure consistent supply and eliminate community contamination risks.</p>
+            
+            <h3 class="h6 text-uppercase mb-3 fw-bold text-muted">Key Capabilities:</h3>
+            <ul class="list-unstyled d-flex flex-column gap-2 mb-5">
+              <li class="d-flex align-items-center gap-2">
+                <i data-lucide="check" class="text-info w-5 h-5"></i> <strong>Drinking Water Plants:</strong> Integrated treatment networks servicing district municipalities.
+              </li>
+              <li class="d-flex align-items-center gap-2">
+                <i data-lucide="check" class="text-info w-5 h-5"></i> <strong>Large Scale Purification:</strong> High capacity chlorination, flocculation, and UV nodes.
+              </li>
+              <li class="d-flex align-items-center gap-2">
+                <i data-lucide="check" class="text-info w-5 h-5"></i> <strong>Desalination Plants:</strong> High efficiency sea-water intake filter terminals.
+              </li>
+            </ul>
+
+            <div class="d-flex gap-3">
+              <a href="contact.html?type=municipal" class="btn btn-premium">Request Consultation</a>
+              <a href="about.html" class="btn btn-premium-outline">Our Engineering Approach</a>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-5 opacity-10">
+
+        <!-- 3. Residential Solutions -->
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <div class="p-2 border border-info-subtle bg-light-gradient">
+              <img src="assets/images/residential-solution.png" alt="Residential smart home filter" class="img-fluid w-100">
+            </div>
+          </div>
+          <div class="col-lg-6 text-start">
+            <span class="text-uppercase tracking-widest text-info fs-8 fw-semibold">Residential Division</span>
+            <h2 class="h1 mt-2 mb-4">Residential Solutions</h2>
+            <p class="text-secondary mb-4">Premium domestic filtering systems offering commercial-grade safety in modular, sleek, countertop and whole-home appliances. Connects to telemetry systems for automated filter cartridge maintenance alerts.</p>
+            
+            <h3 class="h6 text-uppercase mb-3 fw-bold text-muted">Product Profiles:</h3>
+            <ul class="list-unstyled d-flex flex-column gap-2 mb-5">
+              <li class="d-flex align-items-center gap-2">
+                <i data-lucide="check" class="text-info w-5 h-5"></i> <strong>Home Filtration Systems:</strong> Multi-stage point-of-entry water softeners and filtration.
+              </li>
+              <li class="d-flex align-items-center gap-2">
+                <i data-lucide="check" class="text-info w-5 h-5"></i> <strong>Smart Water Purifiers:</strong> IoT active UV-C sterilizers with integrated carbon filter cores.
+              </li>
+              <li class="d-flex align-items-center gap-2">
+                <i data-lucide="check" class="text-info w-5 h-5"></i> <strong>Point-Of-Use Filters:</strong> Sleek kitchen faucet and under-sink reverse osmosis units.
+              </li>
+            </ul>
+
+            <div class="d-flex gap-3">
+              <a href="contact.html?type=residential" class="btn btn-premium">Request Home Assessment</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="premium-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <a class="footer-logo mb-3" href="index.html">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+            </svg>
+            AQUATECH
+          </a>
+          <p class="text-secondary mt-3">Engineering high-end, zero-liquid-discharge municipal, commercial, and industrial water filtration infrastructure globally.</p>
+        </div>
+        <div class="col-md-4 col-lg-2">
+          <h3 class="h6 text-uppercase tracking-wider mb-4">Quick Links</h3>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="solutions.html" class="footer-link">Solutions</a></li>
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="industries.html" class="footer-link">Industries</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-lg-2">
+          <h3 class="h6 text-uppercase tracking-wider mb-4">Resources</h3>
+          <ul class="list-unstyled">
+            <li><a href="coming-soon.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="coming-soon.html" class="footer-link">Terms of Service</a></li>
+            <li><a href="coming-soon.html" class="footer-link">Engineering Documentation</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-lg-4">
+          <h3 class="h6 text-uppercase tracking-wider mb-4">Newsletter</h3>
+          <p class="text-secondary mb-3">Subscribe to our tech journals and clean-tech engineering reviews.</p>
+          <form class="newsletter-form d-flex gap-2">
+            <input type="email" class="form-control" placeholder="Enter your email" required aria-label="Email address">
+            <button type="submit" class="btn btn-premium text-white border-white">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="row pt-5 mt-5 border-top align-items-center justify-content-between">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="text-secondary mb-0">&copy; 2026 AQUATECH Engineering. All rights reserved.</p>
+        </div>
+        <div class="col-md-4 text-center text-md-end mt-3 mt-md-0">
+          <div class="d-flex gap-3 justify-content-center justify-content-md-end text-secondary">
+            <a href="#" class="text-secondary" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+            <a href="#" class="text-secondary" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+            <a href="#" class="text-secondary" aria-label="Github"><i data-lucide="github"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="scroll-top" class="scroll-top" aria-label="Back to Top">
+    <i data-lucide="chevron-up"></i>
+  </button>
+
+  <!-- JS CDNs -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

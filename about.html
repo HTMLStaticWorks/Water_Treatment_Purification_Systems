@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | AQUATECH Engineering</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Discover AQUATECH's company story, engineering precision, quality assurance protocols, and global sustainability efforts in water purification.">
+  <meta name="keywords" content="Water purification story, Clean water mission, Sustainable desalinization engineering">
+
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💧</text></svg>">
+
+  <!-- CDNs -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom Stylesheets -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/dark-mode.css" rel="stylesheet">
+  <link href="assets/css/rtl.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div id="page-loader" class="page-loader" aria-hidden="true">
+    <div class="loader-waves">
+      <div class="loader-wave-element"></div>
+      <div class="loader-wave-element"></div>
+      <div class="loader-wave-element"></div>
+    </div>
+    <h2 class="fs-6 mt-3 tracking-widest text-uppercase text-muted">AQUATECH</h2>
+  </div>
+
+  <!-- WebGL Background Canvas -->
+  <div id="webgl-canvas-container" class="canvas-bg" aria-hidden="true"></div>
+
+  <!-- Header Section -->
+  <header class="fixed-top">
+    <nav class="navbar premium-navbar navbar-expand-lg py-0" aria-label="Main Navigation">
+      <div class="container">
+        
+        <a class="navbar-brand" href="index.html">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+          </svg>
+          AQUATECH
+        </a>
+
+        <div class="d-none d-lg-flex align-items-center gap-3 order-lg-3">
+          <button id="theme-toggle" class="toggle-btn" aria-label="Toggle dark mode"></button>
+          <button id="dir-toggle" class="toggle-btn" aria-label="Toggle language direction">RTL</button>
+          <a href="contact.html" class="btn btn-premium btn-sm">Request Consultation</a>
+        </div>
+
+        <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="solutions.html">Solutions</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="industries.html">Industries</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+              
+              <li class="nav-item d-lg-none mt-4">
+                <div class="d-flex gap-3 align-items-center justify-content-center">
+                  <button onclick="document.getElementById('theme-toggle').click()" class="toggle-btn">🌓</button>
+                  <button onclick="document.getElementById('dir-toggle').click()" class="toggle-btn">RTL/LTR</button>
+                </div>
+              </li>
+              <li class="nav-item d-lg-none mt-3">
+                <a href="contact.html" class="btn btn-premium w-100">Request Consultation</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <!-- About Content -->
+  <main class="py-5" style="margin-top: var(--header-height);">
+    
+    <!-- About Page Hero -->
+    <section class="py-5 text-start">
+      <div class="container py-4">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <span class="text-uppercase tracking-widest text-muted fs-7">Our Heritage</span>
+            <h1 class="hero-title mt-2 mb-4">Engineering Pure Resource Cycles</h1>
+            <p class="body-lead">Established in 2001, AQUATECH designs high-performance water filtration grids and complex purification membranes to satisfy global processing requirements.</p>
+          </div>
+          <div class="col-lg-6 text-secondary">
+            <p>Our organization started with a single engineering team dedicated to solving municipal hard water problems. Today, we stand as an international design brand with system installations crossing 35 countries, delivering clean processing water for pharmaceuticals, microelectronics, municipal networks, and households.</p>
+            <p class="mt-3">We strictly construct water systems matching ISO 9001 and ISO 14001 specifications, integrating dynamic IoT flow analytics into every custom layout to save energy and secure zero waste.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Stats Grid -->
+    <section class="py-5 bg-light-gradient">
+      <div class="container py-4">
+        <div class="row g-4 text-center">
+          <div class="col-md-3">
+            <div class="stat-box border bg-white p-4">
+              <div class="stat-number" data-target="1200" data-suffix="+">0</div>
+              <span class="text-uppercase tracking-widest text-muted fs-8">Projects Completed</span>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-box border bg-white p-4">
+              <div class="stat-number" data-target="35" data-suffix="+">0</div>
+              <span class="text-uppercase tracking-widest text-muted fs-8">Industries Served</span>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-box border bg-white p-4">
+              <div class="stat-number" data-target="450" data-suffix="M">0</div>
+              <span class="text-uppercase tracking-widest text-muted fs-8">Daily Liters Managed</span>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-box border bg-white p-4">
+              <div class="stat-number" data-target="25" data-suffix="+">0</div>
+              <span class="text-uppercase tracking-widest text-muted fs-8">Years Experience</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Engineering Values -->
+    <section class="py-5">
+      <div class="container py-4">
+        <div class="row g-5">
+          <!-- Column 1 -->
+          <div class="col-md-6">
+            <span class="text-info tracking-widest text-uppercase fs-8 fw-semibold">The Mission</span>
+            <h2 class="h3 mt-2 mb-4">Driving Sustainable Water Security</h2>
+            <p class="text-secondary">We aim to counter clean-water scarcity trends by designing mechanical RO systems with high water recovery rates, allowing heavy industrial processing loops to consume less raw groundwater resources.</p>
+          </div>
+          <!-- Column 2 -->
+          <div class="col-md-6">
+            <span class="text-info tracking-widest text-uppercase fs-8 fw-semibold">Quality Standards</span>
+            <h2 class="h3 mt-2 mb-4">Precision Engineering Excellence</h2>
+            <p class="text-secondary">Our systems are fabricated using marine-grade stainless steels, high-density polyethylene pipelines, and IoT remote-telemetry controllers. Every weld, connection, and membrane block is pressure audited to guarantee zero failures.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sustainability Section -->
+    <section class="py-5 bg-light-gradient">
+      <div class="container py-4">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 text-start">
+            <span class="text-uppercase tracking-widest text-muted fs-7">Global Commitment</span>
+            <h2 class="section-title mt-2 mb-4">Zero Liquid Discharge Focus</h2>
+            <p class="text-secondary mb-4">Through Zero Liquid Discharge (ZLD) technologies, we enable processing facilities to reclaim up to 98% of waste brine. This minimizes municipal pollution hazards and protects local waterways from chemical run-offs.</p>
+            <a href="solutions.html" class="btn btn-premium">Learn About ZLD Tech</a>
+          </div>
+          <div class="col-lg-6">
+            <div class="p-4 border bg-white shadow-sm">
+              <h3 class="h5 mb-3 fw-bold">Eco-Design Guidelines</h3>
+              <ul class="list-unstyled mb-0 d-flex flex-column gap-3 text-secondary">
+                <li class="d-flex align-items-start gap-2">
+                  <i data-lucide="leaf" class="text-success mt-1"></i>
+                  <div>
+                    <strong>Energy Recovery Integration:</strong> Reclaims up to 30% of pressure energy in RO pump stages.
+                  </div>
+                </li>
+                <li class="d-flex align-items-start gap-2">
+                  <i data-lucide="shield-check" class="text-success mt-1"></i>
+                  <div>
+                    <strong>Biodegradable Sanitizers:</strong> Cleaning cycles use eco-safe agents that dissolve without ecological footprint.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="premium-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <a class="footer-logo mb-3" href="index.html">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+            </svg>
+            AQUATECH
+          </a>
+          <p class="text-secondary mt-3">Engineering high-end, zero-liquid-discharge municipal, commercial, and industrial water filtration infrastructure globally.</p>
+        </div>
+        <div class="col-md-4 col-lg-2">
+          <h3 class="h6 text-uppercase tracking-wider mb-4">Quick Links</h3>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="solutions.html" class="footer-link">Solutions</a></li>
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="industries.html" class="footer-link">Industries</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-lg-2">
+          <h3 class="h6 text-uppercase tracking-wider mb-4">Resources</h3>
+          <ul class="list-unstyled">
+            <li><a href="coming-soon.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="coming-soon.html" class="footer-link">Terms of Service</a></li>
+            <li><a href="coming-soon.html" class="footer-link">Engineering Documentation</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-lg-4">
+          <h3 class="h6 text-uppercase tracking-wider mb-4">Newsletter</h3>
+          <p class="text-secondary mb-3">Subscribe to our tech journals and clean-tech engineering reviews.</p>
+          <form class="newsletter-form d-flex gap-2">
+            <input type="email" class="form-control" placeholder="Enter your email" required aria-label="Email address">
+            <button type="submit" class="btn btn-premium text-white border-white">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="row pt-5 mt-5 border-top align-items-center justify-content-between">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="text-secondary mb-0">&copy; 2026 AQUATECH Engineering. All rights reserved.</p>
+        </div>
+        <div class="col-md-4 text-center text-md-end mt-3 mt-md-0">
+          <div class="d-flex gap-3 justify-content-center justify-content-md-end text-secondary">
+            <a href="#" class="text-secondary" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+            <a href="#" class="text-secondary" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+            <a href="#" class="text-secondary" aria-label="Github"><i data-lucide="github"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="scroll-top" class="scroll-top" aria-label="Back to Top">
+    <i data-lucide="chevron-up"></i>
+  </button>
+
+  <!-- JS CDNs -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
