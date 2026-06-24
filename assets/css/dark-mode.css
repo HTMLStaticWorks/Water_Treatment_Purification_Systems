@@ -7,7 +7,7 @@
   --bg-primary: #030712; /* Near Black */
   --bg-secondary: #0b1329; /* Deep Tech Blue-Gray */
   --text-primary: #f8fafc; /* High Contrast White */
-  --text-secondary: #94a3b8; /* Muted Slate Gray */
+  --text-secondary: #e2e8f0; /* Muted Slate Gray -> High Contrast Light Gray */
   --accent-color: #38bdf8; /* Bright Electric Blue */
   --accent-light: rgba(56, 189, 248, 0.1);
   --border-color: #1e293b; /* Dark Borders */
@@ -55,20 +55,28 @@
 }
 
 /* Inputs & Form Controls */
-[data-theme="dark"] .form-control {
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select {
   background-color: var(--bg-secondary);
   border-color: var(--border-color);
   color: var(--text-primary);
 }
 
-[data-theme="dark"] .form-control:focus {
+[data-theme="dark"] .form-control:focus,
+[data-theme="dark"] .form-select:focus {
   background-color: var(--bg-secondary);
   border-color: var(--accent-color);
   color: var(--text-primary);
 }
 
-[data-theme="dark"] .form-control::placeholder {
+[data-theme="dark"] .form-control::placeholder,
+[data-theme="dark"] .form-select::placeholder {
   color: #64748b;
+}
+
+[data-theme="dark"] .form-select {
+  /* Replace the black default chevron arrow with a white one */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
 }
 
 /* Bootstrap Accordion Overrides */
@@ -133,6 +141,29 @@
 
 /* Fix text-muted visibility in dark mode */
 [data-theme="dark"] .text-muted {
-  color: var(--text-secondary) !important;
+  color: #94a3b8 !important;
 }
 
+/* Footer links text color to white in dark mode */
+[data-theme="dark"] .footer-link {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .footer-link:hover {
+  color: var(--accent-color) !important;
+}
+
+/* System Engineering Schematic Details Panel */
+[data-theme="dark"] .schematic-details-box .bg-light {
+  background-color: var(--bg-secondary) !important;
+}
+
+[data-theme="dark"] .schematic-details-box code.text-dark {
+  color: var(--text-primary) !important;
+}
+
+/* Invert default Bootstrap black icons (hamburger menu, offcanvas close button) to white in dark mode */
+[data-theme="dark"] .navbar-toggler-icon,
+[data-theme="dark"] .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}

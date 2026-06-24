@@ -34,7 +34,98 @@
   left: 30px;
 }
 
-/* Asymmetric Solutions Panel Adjustments */
+/* ============================
+   Hero Section RTL Fix
+   ============================ */
+
+/* ============================
+   Global Bootstrap Utility Fixes
+   ============================ */
+
+/* Flip LTR Bootstrap's hardcoded text alignment utilities */
+[dir="rtl"] .text-start {
+  text-align: right !important;
+}
+
+[dir="rtl"] .text-end {
+  text-align: left !important;
+}
+
+/* Flip select dropdown chevron icon to the left side */
+[dir="rtl"] .form-select {
+  padding-right: .75rem;
+  padding-left: 2.25rem;
+  background-position: left .75rem center !important;
+}
+
+/* Fix validated states for select in RTL */
+[dir="rtl"] .was-validated .form-select:valid, 
+[dir="rtl"] .form-select.is-valid,
+[dir="rtl"] .was-validated .form-select:invalid, 
+[dir="rtl"] .form-select.is-invalid {
+  padding-right: .75rem !important;
+  padding-left: 4.125rem !important;
+  background-position: left .75rem center, center left 2.25rem !important;
+}
+
+/* Force the hero title to expand and align fully to the right edge */
+[dir="rtl"] .hero-title {
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
+  text-align: right !important;
+}
+
+/* Fix the CTA button alignment */
+[dir="rtl"] .hero-wrapper .d-flex.flex-wrap.gap-3 {
+  justify-content: flex-start;
+}
+
+
+
+/* Flip padding-start utilities for RTL */
+[dir="rtl"] .ps-3 {
+  padding-right: 1rem !important;
+  padding-left: 0 !important;
+}
+
+/* Base list padding fix for RTL */
+[dir="rtl"] ol, [dir="rtl"] ul {
+  padding-right: 2rem;
+  padding-left: 0;
+}
+
+/* ============================
+   Why Choose Us — RTL Alignment Fixes
+   ============================ */
+
+/* Fix LTR Bootstrap's list-unstyled which only removes padding-left */
+[dir="rtl"] .list-unstyled {
+  padding-right: 0 !important;
+  padding-left: 0;
+}
+
+/* Force all text in the glass container's left column to align right */
+[dir="rtl"] .glass-text-container .col-lg-6:first-child {
+  text-align: right !important;
+}
+
+/* Ensure the text div inside bullet points takes full width and aligns right strictly */
+[dir="rtl"] ul.list-unstyled li.d-flex.align-items-start.gap-3 div {
+  text-align: right !important;
+  flex-grow: 1;
+  width: 100%;
+}
+
+/* Force bullet point text to be RTL reading direction so it aligns properly with right-to-left layout */
+[dir="rtl"] ul.list-unstyled li.d-flex.align-items-start.gap-3 h4,
+[dir="rtl"] ul.list-unstyled li.d-flex.align-items-start.gap-3 p {
+  text-align: right !important;
+}
+
+/* ============================
+   Asymmetric Solutions Panel
+   ============================ */
 [dir="rtl"] .solutions-grid {
   direction: rtl;
 }

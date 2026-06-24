@@ -10,7 +10,7 @@
   --bg-primary: #ffffff;
   --bg-secondary: #f8fafc;
   --text-primary: #0f172a;
-  --text-secondary: #475569;
+  --text-secondary: #1e293b;
   --accent-color: #0284c7;
   --accent-light: #e0f2fe;
   --border-color: #e2e8f0;
@@ -47,6 +47,14 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-primary);
   font-weight: 500;
   letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+.text-secondary {
+  color: var(--text-secondary) !important;
 }
 
 /* Premium Typography Rules from Guidelines */
@@ -199,6 +207,10 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-2px);
 }
 
+.btn-premium-outline.text-white:hover {
+  color: var(--bg-primary) !important;
+}
+
 /* Hero Section */
 .hero-wrapper {
   position: relative;
@@ -207,6 +219,14 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .hero-wrapper {
+    min-height: auto;
+    padding-top: calc(var(--header-height) + 20px);
+    padding-bottom: 20px;
+  }
 }
 
 .hero-canvas-container {
@@ -372,7 +392,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--accent-color);
-  opacity: 0.3;
+  opacity: 0.85;
   line-height: 1;
   margin-bottom: 0.5rem;
 }
@@ -702,7 +722,7 @@ h1, h2, h3, h4, h5, h6 {
     min-height: auto;
   }
   .stat-number {
-    font-size: 3rem;
+    font-size: 2.2rem;
   }
 }
 
@@ -801,6 +821,8 @@ h1, h2, h3, h4, h5, h6 {
   transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s ease, box-shadow 0.4s ease;
   cursor: pointer;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .tilt-card:hover {
@@ -811,14 +833,39 @@ h1, h2, h3, h4, h5, h6 {
 .tilt-card-content {
   transform: translateZ(40px);
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .tilt-card-specs {
-  margin-top: 2rem;
+  margin-top: auto;
   padding-top: 1.5rem;
   border-top: 1px solid var(--border-color);
   font-size: 0.9rem;
   color: var(--text-secondary);
+  display: table;
+  width: 100%;
+}
+
+.tilt-card-specs > div {
+  display: table-row;
+}
+
+.tilt-card-specs > div span,
+.tilt-card-specs > div strong {
+  display: table-cell;
+  padding-bottom: 0.5rem;
+}
+
+.tilt-card-specs > div span {
+  padding-right: 1rem;
+  white-space: nowrap;
+  width: 1%;
+}
+
+.tilt-card-specs > div strong {
+  text-align: right;
 }
 
 /* Inside the System Schematic */
@@ -1018,3 +1065,22 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Glass Text Container for Why Choose Us section */
+.glass-text-container {
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-text-container .stat-box {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+@media (max-width: 1024px) {
+  .stat-number {
+    font-size: 2.8rem;
+  }
+}
