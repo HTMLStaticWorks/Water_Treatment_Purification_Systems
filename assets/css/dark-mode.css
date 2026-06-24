@@ -22,6 +22,11 @@
   color: var(--text-primary);
 }
 
+[data-theme="dark"] .bg-white {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--border-color) !important;
+}
+
 /* Custom adjustments for elements */
 [data-theme="dark"] .btn-premium {
   background-color: var(--text-primary);
@@ -29,10 +34,14 @@
   border-color: var(--text-primary);
 }
 
+[data-theme="dark"] .btn-premium.text-white {
+  color: var(--bg-primary) !important;
+}
+
 [data-theme="dark"] .btn-premium:hover {
   background-color: var(--accent-color);
   border-color: var(--accent-color);
-  color: var(--bg-primary);
+  color: var(--bg-primary) !important;
 }
 
 [data-theme="dark"] .btn-premium-outline {
@@ -93,6 +102,7 @@
 [data-theme="dark"] .table-premium td {
   border-bottom: 1px solid var(--border-color);
   color: var(--text-secondary);
+  background-color: var(--bg-primary);
 }
 
 /* Offcanvas and Modal */
@@ -120,3 +130,9 @@
 [data-theme="dark"] a {
   color: var(--accent-color);
 }
+
+/* Fix text-muted visibility in dark mode */
+[data-theme="dark"] .text-muted {
+  color: var(--text-secondary) !important;
+}
+

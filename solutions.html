@@ -36,46 +36,73 @@
 
   <!-- Header Section -->
   <header class="fixed-top">
-    <nav class="navbar premium-navbar navbar-expand-lg py-0" aria-label="Main Navigation">
+    <nav class="navbar premium-navbar navbar-expand-xl py-0" aria-label="Main Navigation">
       <div class="container">
         
-        <a class="navbar-brand" href="index.html">
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html" id="brand-logo">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
           </svg>
           AQUATECH
         </a>
 
-        <div class="d-none d-lg-flex align-items-center gap-3 order-lg-3">
+        <!-- Custom Controls (Desktop) -->
+        <div class="d-none d-xl-flex align-items-center gap-3 order-xl-3">
           <button id="theme-toggle" class="toggle-btn" aria-label="Toggle dark mode"></button>
           <button id="dir-toggle" class="toggle-btn" aria-label="Toggle language direction">RTL</button>
           <a href="contact.html" class="btn btn-premium btn-sm">Request Consultation</a>
         </div>
 
+        <!-- Hamburger Icon -->
         <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+        <!-- Offcanvas Mobile Navigation Menu -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title">Menu</h5>
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
-              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="solutions.html">Solutions</a></li>
-              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-              <li class="nav-item"><a class="nav-link" href="industries.html">Industries</a></li>
-              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <ul class="navbar-nav mx-auto mb-2 mb-xl-0 align-items-xl-center">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home <i data-lucide="chevron-down" class="nav-dropdown-icon"></i></a>
+                <ul class="dropdown-menu shadow-lg" aria-labelledby="homeDropdown">
+                  <li><a class="dropdown-item active" href="index.html">Home 1</a></li>
+                  <li><a class="dropdown-item" href="home2.html">Home 2</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Solutions <i data-lucide="chevron-down" class="nav-dropdown-icon"></i></a>
+                <ul class="dropdown-menu shadow-lg" aria-labelledby="solutionsDropdown">
+                  <li><a class="dropdown-item" href="industrial.html">Industrial Water Treatment</a></li>
+                  <li><a class="dropdown-item" href="municipal.html">Municipal Purification</a></li>
+                  <li><a class="dropdown-item" href="residential.html">Residential Filtration</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="solutions.html">All Solutions</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="technology.html">Technology</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
               
-              <li class="nav-item d-lg-none mt-4">
+              <!-- Mobile-only Controls -->
+              <li class="nav-item d-xl-none mt-4">
                 <div class="d-flex gap-3 align-items-center justify-content-center">
-                  <button onclick="document.getElementById('theme-toggle').click()" class="toggle-btn">🌓</button>
-                  <button onclick="document.getElementById('dir-toggle').click()" class="toggle-btn">RTL/LTR</button>
+                  <!-- Re-used same IDs for script handler -->
+                  <button onclick="document.getElementById('theme-toggle').click()" class="toggle-btn" aria-label="Toggle Theme mobile">🌓</button>
+                  <button onclick="document.getElementById('dir-toggle').click()" class="toggle-btn" aria-label="Toggle direction mobile">RTL/LTR</button>
                 </div>
               </li>
-              <li class="nav-item d-lg-none mt-3">
+              <li class="nav-item d-xl-none mt-3">
                 <a href="contact.html" class="btn btn-premium w-100">Request Consultation</a>
               </li>
             </ul>
@@ -213,6 +240,7 @@
   <footer class="premium-footer">
     <div class="container">
       <div class="row g-5">
+        
         <div class="col-lg-4">
           <a class="footer-logo mb-3" href="index.html">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -221,17 +249,33 @@
             AQUATECH
           </a>
           <p class="text-secondary mt-3">Engineering high-end, zero-liquid-discharge municipal, commercial, and industrial water filtration infrastructure globally.</p>
+                                        <div class="d-flex gap-3 mt-4">
+            <a href="#" class="footer-social-link" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+          </div>
         </div>
+
         <div class="col-md-4 col-lg-2">
           <h3 class="h6 text-uppercase tracking-wider mb-4">Quick Links</h3>
           <ul class="list-unstyled">
             <li><a href="index.html" class="footer-link">Home</a></li>
             <li><a href="solutions.html" class="footer-link">Solutions</a></li>
             <li><a href="about.html" class="footer-link">About</a></li>
-            <li><a href="industries.html" class="footer-link">Industries</a></li>
+            <li><a href="technology.html" class="footer-link">Technology</a></li>
             <li><a href="contact.html" class="footer-link">Contact</a></li>
           </ul>
         </div>
+
         <div class="col-md-4 col-lg-2">
           <h3 class="h6 text-uppercase tracking-wider mb-4">Resources</h3>
           <ul class="list-unstyled">
@@ -240,6 +284,7 @@
             <li><a href="coming-soon.html" class="footer-link">Engineering Documentation</a></li>
           </ul>
         </div>
+
         <div class="col-md-4 col-lg-4">
           <h3 class="h6 text-uppercase tracking-wider mb-4">Newsletter</h3>
           <p class="text-secondary mb-3">Subscribe to our tech journals and clean-tech engineering reviews.</p>
@@ -248,18 +293,14 @@
             <button type="submit" class="btn btn-premium text-white border-white">Subscribe</button>
           </form>
         </div>
+
       </div>
+
       <div class="row pt-5 mt-5 border-top align-items-center justify-content-between">
         <div class="col-md-6 text-center text-md-start">
           <p class="text-secondary mb-0">&copy; 2026 AQUATECH Engineering. All rights reserved.</p>
         </div>
-        <div class="col-md-4 text-center text-md-end mt-3 mt-md-0">
-          <div class="d-flex gap-3 justify-content-center justify-content-md-end text-secondary">
-            <a href="#" class="text-secondary" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
-            <a href="#" class="text-secondary" aria-label="Twitter"><i data-lucide="twitter"></i></a>
-            <a href="#" class="text-secondary" aria-label="Github"><i data-lucide="github"></i></a>
-          </div>
-        </div>
+        
       </div>
     </div>
   </footer>

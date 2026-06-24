@@ -36,38 +36,75 @@
 
   <!-- Header Section -->
   <header class="fixed-top">
-    <nav class="navbar premium-navbar navbar-expand-lg py-0" aria-label="Main Navigation">
+    <nav class="navbar premium-navbar navbar-expand-xl py-0" aria-label="Main Navigation">
       <div class="container">
         
-        <a class="navbar-brand" href="index.html">
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html" id="brand-logo">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
           </svg>
           AQUATECH
         </a>
 
-        <div class="d-none d-lg-flex align-items-center gap-3 order-lg-3">
+        <!-- Custom Controls (Desktop) -->
+        <div class="d-none d-xl-flex align-items-center gap-3 order-xl-3">
           <button id="theme-toggle" class="toggle-btn" aria-label="Toggle dark mode"></button>
           <button id="dir-toggle" class="toggle-btn" aria-label="Toggle language direction">RTL</button>
           <a href="contact.html" class="btn btn-premium btn-sm">Request Consultation</a>
         </div>
 
+        <!-- Hamburger Icon -->
         <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+        <!-- Offcanvas Mobile Navigation Menu -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title">Menu</h5>
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
-              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="solutions.html">Solutions</a></li>
-              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-              <li class="nav-item"><a class="nav-link" href="industries.html">Industries</a></li>
-              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <ul class="navbar-nav mx-auto mb-2 mb-xl-0 align-items-xl-center">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home <i data-lucide="chevron-down" class="nav-dropdown-icon"></i></a>
+                <ul class="dropdown-menu shadow-lg" aria-labelledby="homeDropdown">
+                  <li><a class="dropdown-item active" href="index.html">Home 1</a></li>
+                  <li><a class="dropdown-item" href="home2.html">Home 2</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Solutions <i data-lucide="chevron-down" class="nav-dropdown-icon"></i></a>
+                <ul class="dropdown-menu shadow-lg" aria-labelledby="solutionsDropdown">
+                  <li><a class="dropdown-item" href="industrial.html">Industrial Water Treatment</a></li>
+                  <li><a class="dropdown-item" href="municipal.html">Municipal Purification</a></li>
+                  <li><a class="dropdown-item" href="residential.html">Residential Filtration</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="solutions.html">All Solutions</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="technology.html">Technology</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+              
+              <!-- Mobile-only Controls -->
+              <li class="nav-item d-xl-none mt-4">
+                <div class="d-flex gap-3 align-items-center justify-content-center">
+                  <!-- Re-used same IDs for script handler -->
+                  <button onclick="document.getElementById('theme-toggle').click()" class="toggle-btn" aria-label="Toggle Theme mobile">🌓</button>
+                  <button onclick="document.getElementById('dir-toggle').click()" class="toggle-btn" aria-label="Toggle direction mobile">RTL/LTR</button>
+                </div>
+              </li>
+              <li class="nav-item d-xl-none mt-3">
+                <a href="contact.html" class="btn btn-premium w-100">Request Consultation</a>
+              </li>
             </ul>
           </div>
         </div>

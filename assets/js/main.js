@@ -29,6 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 7. Form Validations
   initFormValidation();
+
+  // 8. Premium Home 2 Special Interactive Modules
+  initHome2Specials();
 });
 
 /**
@@ -79,23 +82,65 @@ function initNavigation() {
 
   // Active Menu Highlighting
   const currentPath = window.location.pathname;
-  const navLinks = document.querySelectorAll('.nav-link');
-  let matched = false;
   
-  navLinks.forEach(link => {
-    const href = link.getAttribute('href');
-    if (href && currentPath.includes(href) && href !== 'index.html') {
-      link.classList.add('active');
-      matched = true;
-    } else {
-      link.classList.remove('active');
+  // Clear active state first
+  document.querySelectorAll('.nav-link, .dropdown-item').forEach(el => {
+    el.classList.remove('active');
+  });
+
+  let isHomeActive = false;
+  let isSolutionsActive = false;
+  let matchedOther = false;
+
+  // Highlight specific dropdown item
+  const dropdownItems = document.querySelectorAll('.dropdown-item');
+  dropdownItems.forEach(item => {
+    const href = item.getAttribute('href');
+    if (href && href !== '#' && currentPath.includes(href)) {
+      item.classList.add('active');
+      if (href === 'index.html' || href === 'home2.html') {
+        isHomeActive = true;
+      }
+      if (href === 'industrial.html' || href === 'municipal.html' || href === 'residential.html' || href === 'solutions.html') {
+        isSolutionsActive = true;
+      }
     }
   });
 
-  // If no match and we're on root/home, set active on Home link
-  if (!matched && navLinks.length > 0) {
-    const homeLink = Array.from(navLinks).find(l => l.getAttribute('href') === 'index.html');
-    if (homeLink) homeLink.classList.add('active');
+  // Also check standard nav-links
+  const navLinks = document.querySelectorAll('.nav-link');
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && href !== '#') {
+      if (currentPath.includes(href)) {
+        if (href === 'solutions.html') {
+          isSolutionsActive = true;
+        } else {
+          link.classList.add('active');
+          matchedOther = true;
+        }
+      }
+    }
+  });
+
+  // Special handler for technical details page (falls under Industrial Solutions)
+  if (currentPath.includes('service-detail.html')) {
+    isSolutionsActive = true;
+    const industrialItem = Array.from(dropdownItems).find(item => item.getAttribute('href') === 'industrial.html');
+    if (industrialItem) industrialItem.classList.add('active');
+  }
+
+  // Set active class on parent dropdowns
+  const homeDropdown = document.getElementById('homeDropdown');
+  const solutionsDropdown = document.getElementById('solutionsDropdown');
+
+  if (currentPath.endsWith('/') || currentPath.includes('index.html') || currentPath.includes('home2.html') || isHomeActive) {
+    if (homeDropdown) homeDropdown.classList.add('active');
+  } else if (isSolutionsActive) {
+    if (solutionsDropdown) solutionsDropdown.classList.add('active');
+  } else if (!matchedOther) {
+    // Default fallback to Home
+    if (homeDropdown) homeDropdown.classList.add('active');
   }
 }
 
@@ -122,15 +167,16 @@ function initThemeManager() {
 }
 
 function updateThemeIcon(theme) {
-  const themeToggle = document.getElementById('theme-toggle');
-  if (!themeToggle) return;
-  if (theme === 'dark') {
-    themeToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>`;
-    themeToggle.setAttribute('aria-label', 'Switch to Light Mode');
-  } else {
-    themeToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`;
-    themeToggle.setAttribute('aria-label', 'Switch to Dark Mode');
-  }
+  const themeToggles = document.querySelectorAll('#theme-toggle, button[onclick*="theme-toggle"]');
+  themeToggles.forEach(toggle => {
+    if (theme === 'dark') {
+      toggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>`;
+      toggle.setAttribute('aria-label', 'Switch to Light Mode');
+    } else {
+      toggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`;
+      toggle.setAttribute('aria-label', 'Switch to Dark Mode');
+    }
+  });
 }
 
 /**
@@ -153,10 +199,11 @@ function initDirectionManager() {
 }
 
 function updateDirButton(dir) {
-  const dirToggle = document.getElementById('dir-toggle');
-  if (!dirToggle) return;
-  dirToggle.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
-  dirToggle.setAttribute('aria-label', dir === 'rtl' ? 'Switch to Left to Right' : 'Switch to Right to Left');
+  const dirToggles = document.querySelectorAll('#dir-toggle, button[onclick*="dir-toggle"]');
+  dirToggles.forEach(toggle => {
+    toggle.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
+    toggle.setAttribute('aria-label', dir === 'rtl' ? 'Switch to Left to Right' : 'Switch to Right to Left');
+  });
 }
 
 /**
@@ -575,4 +622,92 @@ function validateField(input) {
   }
 
   return isValid;
+}
+
+/**
+ * 8. Premium Home 2 Special Interactive Modules
+ * Implements 3D tilting cards, circular scroll counters, and SVG schematics.
+ */
+function initHome2Specials() {
+  // --- 3D Mouse Tilt Card Handler ---
+  const tiltCards = document.querySelectorAll('.tilt-card');
+  tiltCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left; // x position within element
+      const y = e.clientY - rect.top;  // y position within element
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      // Calculate rotation (-12 to 12 degrees)
+      const rotateX = ((centerY - y) / centerY) * 12;
+      const rotateY = ((x - centerX) / centerX) * 12;
+      
+      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    });
+  });
+
+  // --- SVG Technical Schematic Detail Visualizer ---
+  const nodes = document.querySelectorAll('.schematic-interactive-node');
+  const detailTitle = document.getElementById('schematic-detail-title');
+  const detailDesc = document.getElementById('schematic-detail-desc');
+  const detailSpec = document.getElementById('schematic-detail-spec');
+  
+  if (nodes.length > 0 && detailTitle && detailDesc) {
+    nodes.forEach(node => {
+      node.addEventListener('click', () => {
+        // Remove active class from all
+        nodes.forEach(n => n.classList.remove('active'));
+        // Add active class to clicked node
+        node.classList.add('active');
+        
+        // Load details from attributes
+        const title = node.getAttribute('data-title');
+        const desc = node.getAttribute('data-desc');
+        const spec = node.getAttribute('data-spec');
+        
+        detailTitle.textContent = title;
+        detailDesc.textContent = desc;
+        if (detailSpec) detailSpec.textContent = spec;
+      });
+    });
+  }
+
+  // --- Scroll Circular Gauges Animation ---
+  const circles = document.querySelectorAll('.progress-circle-val');
+  if (circles.length > 0) {
+    const animateCircles = () => {
+      circles.forEach(circle => {
+        const percent = parseInt(circle.getAttribute('data-percent'), 10);
+        const radius = circle.r.baseVal.value;
+        const circumference = 2 * Math.PI * radius;
+        
+        // Calculate offset matching percentage
+        const offset = circumference - (percent / 100) * circumference;
+        circle.style.strokeDasharray = circumference;
+        circle.style.strokeDashoffset = offset;
+      });
+    };
+
+    // Intersection Observer to trigger when visible
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCircles();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    // Observe the global impact section container
+    const impactSection = document.getElementById('global-impact-section');
+    if (impactSection) {
+      observer.observe(impactSection);
+    }
+  }
 }
