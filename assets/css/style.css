@@ -874,11 +874,13 @@ p {
   border: 1px solid var(--border-color);
   padding: 2.5rem;
   border-radius: 12px;
+  overflow-x: auto;
 }
 
 .schematic-svg {
   width: 100%;
   max-width: 800px;
+  min-width: 600px;
   height: auto;
 }
 

@@ -55,6 +55,15 @@
   text-align: left !important;
 }
 
+@media (min-width: 992px) {
+  [dir="rtl"] .text-lg-start {
+    text-align: right !important;
+  }
+  [dir="rtl"] .text-lg-end {
+    text-align: left !important;
+  }
+}
+
 /* Flip select dropdown chevron icon to the left side */
 [dir="rtl"] .form-select {
   padding-right: .75rem;
@@ -70,19 +79,6 @@
   padding-right: .75rem !important;
   padding-left: 4.125rem !important;
   background-position: left .75rem center, center left 2.25rem !important;
-}
-
-/* Force the hero title to expand and align fully to the right edge */
-[dir="rtl"] .hero-title {
-  max-width: 100% !important;
-  margin-left: auto !important;
-  margin-right: 0 !important;
-  text-align: right !important;
-}
-
-/* Fix the CTA button alignment */
-[dir="rtl"] .hero-wrapper .d-flex.flex-wrap.gap-3 {
-  justify-content: flex-start;
 }
 
 
