@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AQUATECH | Advanced Water Treatment & Purification Engineering</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="AQUATECH engineering designs premium industrial, municipal, and residential water treatment systems. Leading global sustainable purification technology.">
+  <meta name="keywords" content="Water Treatment, Reverse Osmosis, Municipal Water Filtration, Industrial Water Purification, Sustainable Systems">
+  <meta name="author" content="AQUATECH Engineering">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="AQUATECH | Premium Water Treatment Systems">
+  <meta property="og:description" content="Engineering sustainable water treatment and high-performance purification systems globally.">
+  <meta property="og:image" content="assets/images/hero-system.png">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon Mock -->
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💧</text></svg>">
+
+  <!-- CDNs: Bootstrap 5, Lucide Icons, Three.js -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom Stylesheets -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/dark-mode.css" rel="stylesheet">
+  <link href="assets/css/rtl.css" rel="stylesheet">
+
+  <!-- JSON-LD Structured Data for SEO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "AQUATECH Engineering",
+      "url": "index.html",
+      "logo": "assets/images/hero-system.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-800-555-0199",
+        "contactType": "customer service",
+        "areaServed": "Global"
+      }
+    }
+  </script>
+</head>
+<body class="home-white-text">
+
+  <!-- Custom Page Loading Spinner -->
+  <div id="page-loader" class="page-loader" aria-hidden="true">
+    <div class="loader-waves">
+      <div class="loader-wave-element"></div>
+      <div class="loader-wave-element"></div>
+      <div class="loader-wave-element"></div>
+    </div>
+    <h2 class="fs-6 mt-3 tracking-widest text-uppercase text-muted">AQUATECH</h2>
+  </div>
+
+  <!-- WebGL Background Canvas Container -->
+  <div id="webgl-canvas-container" class="canvas-bg" aria-hidden="true"></div>
+
+  <!-- Header Section -->
+  <header class="fixed-top">
+    <nav class="navbar premium-navbar navbar-expand-xl py-0" aria-label="Main Navigation">
+      <div class="container">
+        
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html" id="brand-logo">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+          </svg>
+          AQUATECH
+        </a>
+
+        <!-- Custom Controls (Desktop) -->
+        <div class="d-none d-xl-flex align-items-center gap-3 order-xl-3">
+          <button id="theme-toggle" class="toggle-btn" aria-label="Toggle dark mode"></button>
+          <button id="dir-toggle" class="toggle-btn" aria-label="Toggle language direction">RTL</button>
+          <a href="contact.html" class="btn btn-premium btn-sm">Request Consultation</a>
+        </div>
+
+        <!-- Hamburger Icon -->
+        <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Offcanvas Mobile Navigation Menu -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav mx-auto mb-2 mb-xl-0 align-items-xl-center">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home <i data-lucide="chevron-down" class="nav-dropdown-icon"></i></a>
+                <ul class="dropdown-menu shadow-lg" aria-labelledby="homeDropdown">
+                  <li><a class="dropdown-item active" href="index.html">Home 1</a></li>
+                  <li><a class="dropdown-item" href="home2.html">Home 2</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Solutions <i data-lucide="chevron-down" class="nav-dropdown-icon"></i></a>
+                <ul class="dropdown-menu shadow-lg" aria-labelledby="solutionsDropdown">
+                  <li><a class="dropdown-item" href="industrial.html">Industrial Water Treatment</a></li>
+                  <li><a class="dropdown-item" href="municipal.html">Municipal Purification</a></li>
+                  <li><a class="dropdown-item" href="residential.html">Residential Filtration</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="solutions.html">All Solutions</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="technology.html">Technology</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+              
+              <!-- Mobile-only Controls -->
+              <li class="nav-item d-xl-none mt-4">
+                <div class="d-flex gap-3 align-items-center justify-content-center">
+                  <!-- Re-used same IDs for script handler -->
+                  <button onclick="document.getElementById('theme-toggle').click()" class="toggle-btn" aria-label="Toggle Theme mobile">🌓</button>
+                  <button onclick="document.getElementById('dir-toggle').click()" class="toggle-btn" aria-label="Toggle direction mobile">RTL/LTR</button>
+                </div>
+              </li>
+              <li class="nav-item d-xl-none mt-3">
+                <a href="contact.html" class="btn btn-premium w-100">Request Consultation</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 1. Hero Section -->
+    <section class="hero-wrapper text-center d-flex align-items-center">
+      <div class="container hero-content py-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <h1 class="hero-title mx-auto mb-4" style="max-width: 800px;">Advanced Water Treatment Solutions for a Cleaner Future</h1>
+            <p class="body-lead mx-auto mb-5" style="max-width: 650px;">Engineering sustainable purification systems for industries, communities, and homes with advanced filtration technology.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+              <a href="contact.html" class="btn btn-premium">Request Engineering Consultation</a>
+              <a href="solutions.html" class="btn btn-premium-outline">Explore Solutions</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Water Solutions Overview Section -->
+    <section class="py-5">
+      <div class="container py-5">
+        <div class="row justify-content-between align-items-end mb-5 text-center text-lg-start">
+          <div class="col-lg-6">
+            <span class="text-uppercase tracking-widest text-muted fs-7">Our Engineering Fields</span>
+            <h2 class="section-title mt-2">Water Solutions Overview</h2>
+          </div>
+          <div class="col-lg-4 text-center text-lg-end mt-3 mt-lg-0">
+            <p class="text-secondary mb-0">Providing custom technical answers to scale water accessibility from home units to large scale municipalities.</p>
+          </div>
+        </div>
+
+        <div class="solutions-grid mt-5">
+          <!-- Panel 1 -->
+          <div class="solution-panel">
+            <div>
+              <span class="solution-panel-tag">Industrial</span>
+              <h3 class="mt-3 mb-4">Industrial Water Treatment</h3>
+              <p class="text-secondary">Advanced reverse osmosis (RO), wastewater treating reactors, zero liquid discharge (ZLD) plants designed for factories and processors.</p>
+            </div>
+            <div class="mt-4">
+              <a href="service-detail.html" class="btn btn-premium-outline btn-sm">Technical Specifications</a>
+            </div>
+          </div>
+
+          <!-- Panel 2 -->
+          <div class="solution-panel">
+            <div>
+              <span class="solution-panel-tag">Municipal</span>
+              <h3 class="mt-3 mb-4">Municipal Purification Systems</h3>
+              <p class="text-secondary">Large-scale drinking water treatment plants, sedimentation equipment, and sand filtration designed to service metropolitan demands safely.</p>
+            </div>
+            <div class="mt-4">
+              <a href="solutions.html" class="btn btn-premium-outline btn-sm">Learn About Capacity</a>
+            </div>
+          </div>
+
+          <!-- Panel 3 -->
+          <div class="solution-panel">
+            <div>
+              <span class="solution-panel-tag">Residential</span>
+              <h3 class="mt-3 mb-4">Residential Filtration Solutions</h3>
+              <p class="text-secondary">Smart active filter models, whole-home water softening modules, and advanced point-of-use units with remote telemetry monitoring.</p>
+            </div>
+            <div class="mt-4">
+              <a href="solutions.html" class="btn btn-premium-outline btn-sm">Explore Models</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Industries We Serve Section -->
+    <section class="py-5">
+      <div class="container py-5">
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-lg-8">
+            <span class="text-uppercase tracking-widest text-muted fs-7">Global Integrations</span>
+            <h2 class="section-title mt-2">Industries We Serve</h2>
+            <p class="text-secondary mt-3">We engineer water solutions tailored to strict compliance codes, chemical standards, and structural capacities across high-demand domains.</p>
+          </div>
+        </div>
+
+        <div class="row g-4 mt-4">
+          <!-- Industry 1 -->
+          <div class="col-md-4">
+            <div class="industry-card">
+              <div class="industry-icon">
+                <i data-lucide="factory" class="w-12 h-12"></i>
+              </div>
+              <h3 class="h5 mb-3">Manufacturing</h3>
+              <p class="text-secondary mb-0">High-purity process water recycling loops, boiler feed processing, and heavy effluent compliance reactors.</p>
+            </div>
+          </div>
+          <!-- Industry 2 -->
+          <div class="col-md-4">
+            <div class="industry-card">
+              <div class="industry-icon">
+                <i data-lucide="heart-pulse" class="w-12 h-12"></i>
+              </div>
+              <h3 class="h5 mb-3">Healthcare</h3>
+              <p class="text-secondary mb-0">Strict clinical-grade water networks supporting sterilization loops, dialyzer networks, and lab systems.</p>
+            </div>
+          </div>
+          <!-- Industry 3 -->
+          <div class="col-md-4">
+            <div class="industry-card">
+              <div class="industry-icon">
+                <i data-lucide="hotel" class="w-12 h-12"></i>
+              </div>
+              <h3 class="h5 mb-3">Hospitality</h3>
+              <p class="text-secondary mb-0">Centrally integrated filtration and softening systems to preserve utility piping and provide clean water for resorts.</p>
+            </div>
+          </div>
+          <!-- Industry 4 -->
+          <div class="col-md-6 mt-lg-4">
+            <div class="industry-card">
+              <div class="industry-icon">
+                <i data-lucide="sprout" class="w-12 h-12"></i>
+              </div>
+              <h3 class="h5 mb-3">Agriculture</h3>
+              <p class="text-secondary mb-0">Custom desalination and nutrient-enrichment filter manifolds designed to save soil and maximize yield.</p>
+            </div>
+          </div>
+          <!-- Industry 5 -->
+          <div class="col-md-6 mt-lg-4">
+            <div class="industry-card">
+              <div class="industry-icon">
+                <i data-lucide="globe" class="w-12 h-12"></i>
+              </div>
+              <h3 class="h5 mb-3">Municipal Infrastructure</h3>
+              <p class="text-secondary mb-0">Integrated treatment stations powering district water supply networks, sand filtering systems, and storage grids.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Technology & Process Section -->
+    <section class="py-5">
+      <div class="container py-5">
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-lg-8">
+            <span class="text-uppercase tracking-widest text-muted fs-7">How We Deliver Excellence</span>
+            <h2 class="section-title mt-2">Technology & Process</h2>
+            <p class="text-secondary mt-3">Engineering water safety is a science-driven progression. Here is how we guarantee purity step-by-step.</p>
+          </div>
+        </div>
+
+        <!-- Timeline layout -->
+        <div class="process-timeline">
+          <!-- Item 1 -->
+          <div class="timeline-item left">
+            <div class="timeline-card">
+              <div class="timeline-num">01</div>
+              <h3 class="h4 mb-3">Water Analysis</h3>
+              <p class="text-secondary mb-0">We perform advanced testing of local raw water chemistry to detect heavy metals, organic elements, and solute concentration values.</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="timeline-item right">
+            <div class="timeline-card">
+              <div class="timeline-num">02</div>
+              <h3 class="h4 mb-3">System Filtration</h3>
+              <p class="text-secondary mb-0">Passing water through high-performance multi-media sand filters and mechanical screen filters to clear suspended solid particles.</p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="timeline-item left">
+            <div class="timeline-card">
+              <div class="timeline-num">03</div>
+              <h3 class="h4 mb-3">Active Purification</h3>
+              <p class="text-secondary mb-0">Subjecting water to high-pressure Reverse Osmosis membrane loops, chemical treatment processes, and UV sanitization stages.</p>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="timeline-item right">
+            <div class="timeline-card">
+              <div class="timeline-num">04</div>
+              <h3 class="h4 mb-3">Quality Monitoring</h3>
+              <p class="text-secondary mb-0">Continuous monitoring via IoT-enabled sensors that test for pH, conductivity, and dissolved solids in real-time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Why Choose Us Section -->
+    <section class="py-5">
+      <div class="container py-5">
+        <div class="solid-theme-bg p-4 p-md-5 rounded-4 shadow-sm">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+              <span class="text-uppercase tracking-widest text-info fs-7 fw-semibold">Proven Performance</span>
+              <h2 class="section-title mt-2 mb-4">Why Choose Us</h2>
+              <p class="text-secondary mb-4">We combine technical ingenuity and operational values to deploy water engineering that safeguards natural assets.</p>
+              
+              <ul class="list-unstyled d-flex flex-column gap-3 mt-4">
+                <li class="d-flex align-items-start gap-3">
+                  <i data-lucide="cpu" class="text-info mt-1"></i>
+                  <div>
+                    <h4 class="h6 mb-1">Advanced Engineering</h4>
+                    <p class="text-secondary mb-0">Highly-trained engineers using custom simulated WebGL fluid dynamics to construct robust plants.</p>
+                  </div>
+                </li>
+                <li class="d-flex align-items-start gap-3">
+                  <i data-lucide="leaf" class="text-info mt-1"></i>
+                  <div>
+                    <h4 class="h6 mb-1">Sustainable Technology</h4>
+                    <p class="text-secondary mb-0">Maximized recovery rates reducing energy consumption and carbon footprints globally.</p>
+                  </div>
+                </li>
+                <li class="d-flex align-items-start gap-3">
+                  <i data-lucide="layers" class="text-info mt-1"></i>
+                  <div>
+                    <h4 class="h6 mb-1">Custom Solutions</h4>
+                    <p class="text-secondary mb-0">Tailored filtration scales built according to localized requirements and spatial outlines.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="row g-4 text-center">
+                <div class="col-6">
+                  <div class="stat-box border p-3 p-md-4 h-100 d-flex flex-column justify-content-center">
+                    <div class="stat-number" data-target="1200" data-suffix="+">0</div>
+                    <span class="text-uppercase tracking-widest text-secondary fs-8">Projects Done</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="stat-box border p-3 p-md-4 h-100 d-flex flex-column justify-content-center">
+                    <div class="stat-number" data-target="35" data-suffix="+">0</div>
+                    <span class="text-uppercase tracking-widest text-secondary fs-8">Countries Served</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="stat-box border p-3 p-md-4 h-100 d-flex flex-column justify-content-center">
+                    <div class="stat-number" data-target="450" data-suffix="M">0</div>
+                    <span class="text-uppercase tracking-widest text-secondary fs-8">Liters Purified Daily</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="stat-box border p-3 p-md-4 h-100 d-flex flex-column justify-content-center">
+                    <div class="stat-number" data-target="25" data-suffix="+">0</div>
+                    <span class="text-uppercase tracking-widest text-secondary fs-8">Years of Operations</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Engineering Inquiry CTA Section -->
+    <section class="py-5 bg-dark text-white text-center position-relative overflow-hidden">
+      <!-- Glow background -->
+      <div class="position-absolute top-50 start-50 translate-middle w-50 h-50 bg-info rounded-circle opacity-10 blur-50" style="filter: blur(80px);"></div>
+      <div class="container py-5 position-relative z-1">
+        <h2 class="section-title text-white mb-3">Need a customized water treatment solution?</h2>
+        <p class="lead opacity-75 mb-5 max-w-600 mx-auto text-white">Get in touch with our design engineers. We will analyze your inputs and propose a blueprint.</p>
+        <a href="contact.html" class="btn btn-info btn-premium text-dark bg-info border-info px-5">Get Engineering Assessment</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="premium-footer">
+    <div class="container">
+      <div class="row g-5">
+        
+        <div class="col-lg-4">
+          <a class="footer-logo mb-3" href="index.html">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+            </svg>
+            AQUATECH
+          </a>
+          <p class="text-secondary mt-3">Engineering high-end, zero-liquid-discharge municipal, commercial, and industrial water filtration infrastructure globally.</p>
+                                        <div class="d-flex gap-3 mt-4">
+            <a href="#" class="footer-social-link" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="X">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+              </a>
+            <a href="#" class="footer-social-link" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-lg-2">
+          <h3 class="h6 text-uppercase tracking-wider mb-4">Quick Links</h3>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="solutions.html" class="footer-link">Solutions</a></li>
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="technology.html" class="footer-link">Technology</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3 col-lg-2">
+          <h3 class="h6 text-uppercase tracking-wider mb-4">Resources</h3>
+          <ul class="list-unstyled">
+            <li><a href="coming-soon.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="coming-soon.html" class="footer-link">Terms of Service</a></li>
+            <li><a href="coming-soon.html" class="footer-link">Engineering Documentation</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <h3 class="h6 text-uppercase tracking-wider mb-4">Newsletter</h3>
+          <p class="text-secondary mb-3">Subscribe to our tech journals and clean-tech engineering reviews.</p>
+          <form class="newsletter-form d-flex gap-2">
+            <input type="email" class="form-control" placeholder="Enter your email" required aria-label="Email address">
+            <button type="submit" class="btn btn-premium text-white border-white">Subscribe</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="row pt-5 mt-5 border-top align-items-center justify-content-between">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="text-secondary mb-0">&copy; 2026 AQUATECH Engineering. All rights reserved.</p>
+        </div>
+        
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="scroll-top" class="scroll-top" aria-label="Back to Top">
+    <i data-lucide="chevron-up"></i>
+  </button>
+
+  <!-- JS CDNs: Bootstrap 5, Three.js, Lucide Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Custom JS -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>

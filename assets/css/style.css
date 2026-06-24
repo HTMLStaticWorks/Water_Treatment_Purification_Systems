@@ -1084,3 +1084,8 @@ p {
     font-size: 2.8rem;
   }
 }
+
+/* Custom background for Why Choose Us section */
+.solid-theme-bg {
+  background-color: #ffffff !important;
+}

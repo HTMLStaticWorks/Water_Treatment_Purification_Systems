@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AQUATECH | Next-Gen Water Purification & Clean Tech Engineering</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="AQUATECH designs future-focused molecular water treatment plants. Experience smart filtration systems, autonomous membrane cells, and advanced AI diagnostics.">
+  <meta name="keywords" content="Futuristic Water Treatment, AI Water Filtration, Reverse Osmosis, Smart Membranes, Sustainable clean-tech">
+  <meta name="author" content="AQUATECH Engineering">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="AQUATECH | Premium Clean Tech Water Systems">
+  <meta property="og:description" content="Engineering the future of clean water with automated filtration grids and smart technology.">
+  <meta property="og:image" content="assets/images/hero-system.png">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💧</text></svg>">
+
+  <!-- CDNs: Bootstrap 5, Lucide Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom Stylesheets -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/dark-mode.css" rel="stylesheet">
+  <link href="assets/css/rtl.css" rel="stylesheet">
+
+  <!-- JSON-LD Structured Data for SEO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "AQUATECH Engineering",
+      "url": "home2.html",
+      "logo": "assets/images/hero-system.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-800-555-0199",
+        "contactType": "customer service",
+        "areaServed": "Global"
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div id="page-loader" class="page-loader" aria-hidden="true">
+    <div class="loader-waves">
+      <div class="loader-wave-element"></div>
+      <div class="loader-wave-element"></div>
+      <div class="loader-wave-element"></div>
+    </div>
+    <h2 class="fs-6 mt-3 tracking-widest text-uppercase text-muted">AQUATECH</h2>
+  </div>
+
+  <!-- WebGL Background Canvas Container (Three.js active in main.js) -->
+  <div id="webgl-canvas-container" class="canvas-bg" aria-hidden="true"></div>
+
+  <!-- Glass Header Section -->
+  <header class="fixed-top">
+    <nav class="navbar premium-navbar navbar-expand-xl py-0" aria-label="Main Navigation">
+      <div class="container">
+        
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html" id="brand-logo">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+          </svg>
+          AQUATECH
+        </a>
+
+        <!-- Custom Controls (Desktop) -->
+        <div class="d-none d-xl-flex align-items-center gap-3 order-xl-3">
+          <button id="theme-toggle" class="toggle-btn" aria-label="Toggle dark mode"></button>
+          <button id="dir-toggle" class="toggle-btn" aria-label="Toggle language direction">RTL</button>
+          <a href="contact.html" class="btn btn-premium btn-sm">Request Consultation</a>
+        </div>
+
+        <!-- Hamburger Icon -->
+        <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Offcanvas Mobile Navigation Menu -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav mx-auto mb-2 mb-xl-0 align-items-xl-center">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home <i data-lucide="chevron-down" class="nav-dropdown-icon"></i></a>
+                <ul class="dropdown-menu shadow-lg" aria-labelledby="homeDropdown">
+                  <li><a class="dropdown-item active" href="index.html">Home 1</a></li>
+                  <li><a class="dropdown-item" href="home2.html">Home 2</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Solutions <i data-lucide="chevron-down" class="nav-dropdown-icon"></i></a>
+                <ul class="dropdown-menu shadow-lg" aria-labelledby="solutionsDropdown">
+                  <li><a class="dropdown-item" href="industrial.html">Industrial Water Treatment</a></li>
+                  <li><a class="dropdown-item" href="municipal.html">Municipal Purification</a></li>
+                  <li><a class="dropdown-item" href="residential.html">Residential Filtration</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="solutions.html">All Solutions</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="technology.html">Technology</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+              
+              <!-- Mobile-only Controls -->
+              <li class="nav-item d-xl-none mt-4">
+                <div class="d-flex gap-3 align-items-center justify-content-center">
+                  <!-- Re-used same IDs for script handler -->
+                  <button onclick="document.getElementById('theme-toggle').click()" class="toggle-btn" aria-label="Toggle Theme mobile">🌓</button>
+                  <button onclick="document.getElementById('dir-toggle').click()" class="toggle-btn" aria-label="Toggle direction mobile">RTL/LTR</button>
+                </div>
+              </li>
+              <li class="nav-item d-xl-none mt-3">
+                <a href="contact.html" class="btn btn-premium w-100">Request Consultation</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 1. Immersive 3D Hero Section -->
+    <section class="hero-wrapper text-center d-flex align-items-center">
+      <div class="container hero-content py-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <span class="text-uppercase tracking-widest text-muted fs-7 mb-3 d-inline-block">THE FUTURE OF HYDRO-TECH ENGINEERING</span>
+            <h1 class="hero-title mx-auto mb-4" style="max-width: 800px;">Engineering the Future of Clean Water</h1>
+            <p class="body-lead mx-auto mb-5" style="max-width: 650px;">AQUATECH deploys autonomous molecular filtration systems and smart analytics, setting a premium standard for pure water cycles.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+              <a href="contact.html" class="btn btn-premium">Start Your Project</a>
+              <a href="#inside-system" class="btn btn-premium-outline">View Technology</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Water Transformation Journey -->
+    <section class="py-5 bg-white-gradient">
+      <div class="container py-4">
+        <div class="row mb-5 text-center justify-content-center">
+          <div class="col-lg-8">
+            <span class="text-uppercase tracking-widest text-muted fs-8">Visual Narrative</span>
+            <h2 class="section-title mt-2 mb-3">Water Transformation Journey</h2>
+            <p class="text-secondary lead">Follow the molecular cycle as raw input is refined into high-grade purity.</p>
+          </div>
+        </div>
+        
+        <div class="row g-4 justify-content-center">
+          <!-- Step 1 -->
+          <div class="col-md-4">
+            <div class="journey-step text-center">
+              <div class="journey-badge">Step 01</div>
+              <div class="mb-4 text-info">
+                <i data-lucide="droplets" style="width: 48px; height: 48px; stroke-width: 1.5;"></i>
+              </div>
+              <h3 class="h5 mb-3">Contaminated Water</h3>
+              <p class="text-secondary fs-7 mb-0">Untreated, raw mineral streams containing high levels of heavy metals, pathogens, suspended solids, and particulate toxins.</p>
+            </div>
+          </div>
+          
+          <!-- Step 2 -->
+          <div class="col-md-4">
+            <div class="journey-step text-center">
+              <div class="journey-badge">Step 02</div>
+              <div class="mb-4 text-info">
+                <i data-lucide="sliders" style="width: 48px; height: 48px; stroke-width: 1.5;"></i>
+              </div>
+              <h3 class="h5 mb-3">Advanced Filtration</h3>
+              <p class="text-secondary fs-7 mb-0">High-pressure forced osmotic flow through semi-permeable nanometer sheets, stripping sub-micron contaminants in seconds.</p>
+            </div>
+          </div>
+          
+          <!-- Step 3 -->
+          <div class="col-md-4">
+            <div class="journey-step text-center">
+              <div class="journey-badge">Step 03</div>
+              <div class="mb-4 text-info">
+                <i data-lucide="award" style="width: 48px; height: 48px; stroke-width: 1.5;"></i>
+              </div>
+              <h3 class="h5 mb-3">Pure Water Output</h3>
+              <p class="text-secondary fs-7 mb-0">High-yield, mineral-balanced output ready for semiconductor rinsing, clinical supply, energy boilers, or municipal distribution.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Smart Purification Technology -->
+    <section class="py-5 bg-light-gradient">
+      <div class="container py-4">
+        <div class="row align-items-center mb-5">
+          <div class="col-lg-6 text-start">
+            <span class="text-uppercase tracking-widest text-muted fs-8">Smart System Infrastructure</span>
+            <h2 class="section-title mt-2 mb-0">Autonomous Purification Dynamics</h2>
+          </div>
+          <div class="col-lg-6 text-secondary mt-3 mt-lg-0">
+            <p class="mb-0">Our next-generation systems integrate continuous real-time diagnostic telemetry, automated self-cleaning membrane arrays, and deep learning analytics to maximize system uptime.</p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <!-- Card 1 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="border bg-white p-4 h-100 transition-all feature-hover-card text-center">
+              <div class="text-info mb-3"><i data-lucide="cpu" style="width: 32px; height: 32px;"></i></div>
+              <h3 class="h5 mb-2">AI Monitoring</h3>
+              <p class="text-secondary fs-8 mb-0">Machine learning algorithms analyze flow rates and sensor outputs to predict and prevent membrane fouling hours before it occurs.</p>
+            </div>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="border bg-white p-4 h-100 transition-all feature-hover-card text-center">
+              <div class="text-info mb-3"><i data-lucide="filter" style="width: 32px; height: 32px;"></i></div>
+              <h3 class="h5 mb-2">Smart Filtration</h3>
+              <p class="text-secondary fs-8 mb-0">Micro-adjusting backwash cycles dynamically activate depending on input turbidity, saving significant volumes of rinse water.</p>
+            </div>
+          </div>
+          
+          <!-- Card 3 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="border bg-white p-4 h-100 transition-all feature-hover-card text-center">
+              <div class="text-info mb-3"><i data-lucide="layers" style="width: 32px; height: 32px;"></i></div>
+              <h3 class="h5 mb-2">Advanced Membranes</h3>
+              <p class="text-secondary fs-8 mb-0">Cross-linked aromatic polyamide molecular grids optimize permeability, securing premium salt rejection and chemical resilience.</p>
+            </div>
+          </div>
+          
+          <!-- Card 4 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="border bg-white p-4 h-100 transition-all feature-hover-card text-center">
+              <div class="text-info mb-3"><i data-lucide="activity" style="width: 32px; height: 32px;"></i></div>
+              <h3 class="h5 mb-2">Automated Systems</h3>
+              <p class="text-secondary fs-8 mb-0">PLC-driven multi-valve actuators allow for completely unattended system operation, automated flushing, and safety trips.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Explore Our Engineering Solutions (Interactive Perspective Cards) -->
+    <section class="py-5 bg-white-gradient">
+      <div class="container py-4">
+        <div class="row mb-5 text-center justify-content-center">
+          <div class="col-lg-8">
+            <span class="text-uppercase tracking-widest text-muted fs-8">Systems Portfolio</span>
+            <h2 class="section-title mt-2 mb-3">Explore Our Engineering Solutions</h2>
+            <p class="text-secondary lead">Hover to tilt and reveal advanced specifications of each standard water system tier.</p>
+          </div>
+        </div>
+
+        <div class="row g-4 interactive-perspective">
+          <!-- Card 1 -->
+          <div class="col-lg-4">
+            <div class="tilt-card" data-tilt>
+              <div class="tilt-card-content">
+                <span class="text-info fs-7 tracking-widest text-uppercase fw-bold mb-2 d-inline-block">Scale I</span>
+                <h3 class="h4 mb-3">Industrial Systems</h3>
+                <p class="text-secondary fs-8 mb-0">Designed for thermal energy boilers, microelectronics rinsing, and pharmaceutical loops, delivering absolute pure feed streams.</p>
+                <div class="tilt-card-specs">
+                  <div class="d-flex justify-content-between mb-2">
+                    <span>Flow Capacity:</span>
+                    <strong class="text-primary">Up to 2,500 GPM</strong>
+                  </div>
+                  <div class="d-flex justify-content-between mb-2">
+                    <span>Purity Level:</span>
+                    <strong class="text-primary">&gt;99.98% Rejection</strong>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <span>Monitoring:</span>
+                    <strong class="text-primary">Continuous IoT</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="col-lg-4">
+            <div class="tilt-card" data-tilt>
+              <div class="tilt-card-content">
+                <span class="text-info fs-7 tracking-widest text-uppercase fw-bold mb-2 d-inline-block">Scale II</span>
+                <h3 class="h4 mb-3">Municipal Plants</h3>
+                <p class="text-secondary fs-8 mb-0">High-capacity civil treatment complexes providing standard safe tap drinking water grid supplies to millions of residents.</p>
+                <div class="tilt-card-specs">
+                  <div class="d-flex justify-content-between mb-2">
+                    <span>Flow Capacity:</span>
+                    <strong class="text-primary">Up to 10M GPD</strong>
+                  </div>
+                  <div class="d-flex justify-content-between mb-2">
+                    <span>Purity Level:</span>
+                    <strong class="text-primary">WHO Standard</strong>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <span>Footprint:</span>
+                    <strong class="text-primary">Zero Liquid Discharge</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Card 3 -->
+          <div class="col-lg-4">
+            <div class="tilt-card" data-tilt>
+              <div class="tilt-card-content">
+                <span class="text-info fs-7 tracking-widest text-uppercase fw-bold mb-2 d-inline-block">Scale III</span>
+                <h3 class="h4 mb-3">Home Solutions</h3>
+                <p class="text-secondary fs-8 mb-0">Compact, premium under-sink and whole-house filtration setups utilizing multi-barrier reverse osmosis technology for pure residential drinking water.</p>
+                <div class="tilt-card-specs">
+                  <div class="d-flex justify-content-between mb-2">
+                    <span>Flow Capacity:</span>
+                    <strong class="text-primary">75 to 400 GPD</strong>
+                  </div>
+                  <div class="d-flex justify-content-between mb-2">
+                    <span>Filtration Stage:</span>
+                    <strong class="text-primary">5-Stage RO Grid</strong>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <span>Maintenance:</span>
+                    <strong class="text-primary">Toolless Snap Filters</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Global Impact Section (Dashboard Charts & Circular Progress) -->
+    <section class="py-5 bg-light-gradient" id="global-impact-section">
+      <div class="container py-4">
+        <div class="row mb-5 text-center justify-content-center">
+          <div class="col-lg-8">
+            <span class="text-uppercase tracking-widest text-muted fs-8">Sustainability Metrics</span>
+            <h2 class="section-title mt-2 mb-3">Global Impact Dashboard</h2>
+            <p class="text-secondary lead">Tracking our clean water yields, infrastructure deployments, and ecological preservation footprint.</p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <!-- Circular Stat 1 -->
+          <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="impact-stat-card h-100 d-flex flex-column justify-content-center">
+              <div class="position-relative d-inline-block mb-3">
+                <svg class="progress-circle-svg">
+                  <circle class="progress-circle-bg" cx="60" cy="60" r="45"></circle>
+                  <circle class="progress-circle-val" cx="60" cy="60" r="45" data-percent="98"></circle>
+                </svg>
+                <div class="position-absolute top-50 start-50 translate-middle fs-4 fw-bold">98%</div>
+              </div>
+              <h3 class="h6 text-uppercase tracking-wider">Water Recycled</h3>
+              <p class="text-secondary fs-8 mb-0">Percentage of industrial input water successfully purified and recycled back into operation loops.</p>
+            </div>
+          </div>
+
+          <!-- Circular Stat 2 -->
+          <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="impact-stat-card h-100 d-flex flex-column justify-content-center">
+              <div class="position-relative d-inline-block mb-3">
+                <svg class="progress-circle-svg">
+                  <circle class="progress-circle-bg" cx="60" cy="60" r="45"></circle>
+                  <circle class="progress-circle-val" cx="60" cy="60" r="45" data-percent="100"></circle>
+                </svg>
+                <div class="position-absolute top-50 start-50 translate-middle fs-4 fw-bold">1.2K</div>
+              </div>
+              <h3 class="h6 text-uppercase tracking-wider">Completed Projects</h3>
+              <p class="text-secondary fs-8 mb-0">Over 1,200 large-scale water treatment plant commissions worldwide, from utilities to energy hubs.</p>
+            </div>
+          </div>
+
+          <!-- Circular Stat 3 -->
+          <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="impact-stat-card h-100 d-flex flex-column justify-content-center">
+              <div class="position-relative d-inline-block mb-3">
+                <svg class="progress-circle-svg">
+                  <circle class="progress-circle-bg" cx="60" cy="60" r="45"></circle>
+                  <circle class="progress-circle-val" cx="60" cy="60" r="45" data-percent="85"></circle>
+                </svg>
+                <div class="position-absolute top-50 start-50 translate-middle fs-4 fw-bold">85+</div>
+              </div>
+              <h3 class="h6 text-uppercase tracking-wider">Cities Served</h3>
+              <p class="text-secondary fs-8 mb-0">Municipal drinking water infrastructure grids deployed across major global metropolitan centers.</p>
+            </div>
+          </div>
+
+          <!-- Circular Stat 4 -->
+          <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="impact-stat-card h-100 d-flex flex-column justify-content-center">
+              <div class="position-relative d-inline-block mb-3">
+                <svg class="progress-circle-svg">
+                  <circle class="progress-circle-bg" cx="60" cy="60" r="45"></circle>
+                  <circle class="progress-circle-val" cx="60" cy="60" r="45" data-percent="70"></circle>
+                </svg>
+                <div class="position-absolute top-50 start-50 translate-middle fs-4 fw-bold">70%</div>
+              </div>
+              <h3 class="h6 text-uppercase tracking-wider">Carbon Offset</h3>
+              <p class="text-secondary fs-8 mb-0">Reduction in processing energy footprint relative to legacy sand-filtration infrastructure standard.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Inside The Purification System (Interactive Schematic) -->
+    <section class="py-5 bg-white-gradient" id="inside-system">
+      <div class="container py-4">
+        <div class="row mb-5 text-center justify-content-center">
+          <div class="col-lg-8">
+            <span class="text-uppercase tracking-widest text-muted fs-8">System Engineering</span>
+            <h2 class="section-title mt-2 mb-3">Inside The Purification System</h2>
+            <p class="text-secondary lead">Click the active hot nodes on the flow diagram to inspect structural specifications and fluid animations.</p>
+          </div>
+        </div>
+
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-7">
+            <div class="schematic-wrapper text-center">
+              <!-- SVG Schematic Diagram -->
+              <svg class="schematic-svg" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+                <!-- Pipes -->
+                <line x1="50" y1="150" x2="550" y2="150" stroke="var(--border-color)" stroke-width="8" />
+                <line x1="175" y1="150" x2="175" y2="230" stroke="var(--border-color)" stroke-width="6" />
+                <line x1="175" y1="230" x2="350" y2="230" stroke="var(--border-color)" stroke-width="6" />
+                <line x1="350" y1="230" x2="350" y2="150" stroke="var(--border-color)" stroke-width="6" />
+                
+                <!-- Fluid Flow Dash Animation Lines -->
+                <line x1="50" y1="150" x2="550" y2="150" stroke="var(--accent-color)" stroke-width="4" class="schematic-flow-line" />
+                <line x1="175" y1="150" x2="175" y2="230" stroke="var(--accent-color)" stroke-width="3" class="schematic-flow-line" />
+                <line x1="175" y1="230" x2="350" y2="230" stroke="var(--accent-color)" stroke-width="3" class="schematic-flow-line" />
+                <line x1="350" y1="230" x2="350" y2="150" stroke="var(--accent-color)" stroke-width="3" class="schematic-flow-line" />
+
+                <!-- Filters & Modules Blocks -->
+                <rect x="60" y="100" width="100" height="100" fill="var(--bg-primary)" stroke="var(--border-color)" stroke-width="2" rx="4" />
+                <text x="110" y="185" fill="var(--text-secondary)" font-size="16" font-weight="bold" text-anchor="middle" font-family="var(--font-main)">Pre-Filter</text>
+
+                <rect x="200" y="100" width="140" height="100" fill="var(--bg-primary)" stroke="var(--border-color)" stroke-width="2" rx="4" />
+                <text x="270" y="185" fill="var(--text-secondary)" font-size="16" font-weight="bold" text-anchor="middle" font-family="var(--font-main)">RO Membrane</text>
+
+                <rect x="400" y="100" width="110" height="100" fill="var(--bg-primary)" stroke="var(--border-color)" stroke-width="2" rx="4" />
+                <text x="455" y="185" fill="var(--text-secondary)" font-size="16" font-weight="bold" text-anchor="middle" font-family="var(--font-main)">Polishing</text>
+
+                <!-- Interactive Hotspots (Nodes) -->
+                <!-- Node 1: Intake -->
+                <g class="schematic-interactive-node active" id="node-intake" 
+                   data-title="Primary Intake & Pre-Filter" 
+                   data-desc="Secures raw water feeding loops. Removes heavy sand, mud, and macroscopic suspended solids utilizing a 5-micron automated screen grid."
+                   data-spec="Max Pressure: 4.5 Bar | Mesh Rating: 5 microns | Automatic flush support">
+                  <circle cx="110" cy="150" r="14" fill="var(--text-primary)" stroke="#fff" stroke-width="3" />
+                  <circle cx="110" cy="150" r="22" fill="transparent" stroke="var(--accent-color)" stroke-width="2" style="animation: pulse-wave 2s infinite;" />
+                </g>
+
+                <!-- Node 2: RO Membrane -->
+                <g class="schematic-interactive-node" id="node-membrane" 
+                   data-title="Semi-Permeable RO Membrane" 
+                   data-desc="High-density aromatic polyamide membrane sheet elements. Drives cross-flow separation at high pressures to reject salts, viruses, and metal complexes."
+                   data-spec="Operating Limits: 15-80 Bar | Rejection Index: 99.8% | Material: Polyamide thin-film composite">
+                  <circle cx="270" cy="150" r="14" fill="var(--text-primary)" stroke="#fff" stroke-width="3" />
+                </g>
+
+                <!-- Node 3: Flow Control Bypass -->
+                <g class="schematic-interactive-node" id="node-bypass" 
+                   data-title="Energy Recovery Bypass" 
+                   data-desc="Reclaims waste hydraulic energy from high-pressure reject brine streams, redirecting power into the feed pump to save up to 45% power consumption."
+                   data-spec="Recoup efficiency: 95% | Control mechanism: Dynamic needle regulator | Flow limit: 120 GPM">
+                  <circle cx="262" cy="230" r="14" fill="var(--text-primary)" stroke="#fff" stroke-width="3" />
+                </g>
+
+                <!-- Node 4: Quality Monitoring Output -->
+                <g class="schematic-interactive-node" id="node-outlet" 
+                   data-title="Polishing Filter & IoT Monitor" 
+                   data-desc="Final ultraviolet sterilizer and ultra-fine polishing block. Includes dynamic electrical conductivity and TOC analytical monitoring arrays transmitting live flow data."
+                   data-spec="Conductivity Limit: &lt;0.056 µS/cm | UV Wavelength: 254 nm | Cellular IoT connection enabled">
+                  <circle cx="455" cy="150" r="14" fill="var(--text-primary)" stroke="#fff" stroke-width="3" />
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="schematic-details-box shadow-sm">
+              <span class="text-uppercase tracking-widest text-muted fs-8 mb-2 d-block">Component Analytics</span>
+              <h3 class="h4 mb-3 text-info" id="schematic-detail-title">Primary Intake & Pre-Filter</h3>
+              <p class="text-secondary fs-7 mb-4" id="schematic-detail-desc">Secures raw water feeding loops. Removes heavy sand, mud, and macroscopic suspended solids utilizing a 5-micron automated screen grid.</p>
+              
+              <div class="p-3 bg-light border-start border-info border-3">
+                <span class="fs-9 text-uppercase tracking-wider text-muted fw-bold d-block mb-1">Technical Specs:</span>
+                <code class="fs-8 text-dark" id="schematic-detail-spec">Max Pressure: 4.5 Bar | Mesh Rating: 5 microns | Automatic flush support</code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Premium Consultation Section (Luxury CTA) -->
+    <section class="py-6 text-center bg-light-gradient">
+      <div class="container py-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <span class="text-uppercase tracking-widest text-muted fs-7 mb-3 d-inline-block">CUSTOM TECHNICAL CONFIGURATION</span>
+            <h2 class="section-title mb-4">Build Your Custom Water Solution</h2>
+            <p class="body-lead mx-auto mb-5 text-secondary" style="max-width: 600px;">Consult with our lead engineering team to draft custom designs matching your industrial, civic, or custom building specifications.</p>
+            <a href="contact.html" class="btn btn-premium btn-lg">Schedule Engineering Consultation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="premium-footer">
+    <div class="container">
+      <div class="row g-5">
+        
+        <div class="col-lg-4">
+          <a class="footer-logo mb-3" href="index.html">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+            </svg>
+            AQUATECH
+          </a>
+          <p class="text-secondary mt-3">Engineering high-end, zero-liquid-discharge municipal, commercial, and industrial water filtration infrastructure globally.</p>
+                                        <div class="d-flex gap-3 mt-4">
+            <a href="#" class="footer-social-link" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="X">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+              </a>
+            <a href="#" class="footer-social-link" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-lg-2">
+          <h3 class="h6 text-uppercase tracking-wider mb-4">Quick Links</h3>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="solutions.html" class="footer-link">Solutions</a></li>
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="technology.html" class="footer-link">Technology</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3 col-lg-2">
+          <h3 class="h6 text-uppercase tracking-wider mb-4">Resources</h3>
+          <ul class="list-unstyled">
+            <li><a href="coming-soon.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="coming-soon.html" class="footer-link">Terms of Service</a></li>
+            <li><a href="coming-soon.html" class="footer-link">Engineering Documentation</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <h3 class="h6 text-uppercase tracking-wider mb-4">Newsletter</h3>
+          <p class="text-secondary mb-3">Subscribe to our tech journals and clean-tech engineering reviews.</p>
+          <form class="newsletter-form d-flex gap-2">
+            <input type="email" class="form-control" placeholder="Enter your email" required aria-label="Email address">
+            <button type="submit" class="btn btn-premium text-white border-white">Subscribe</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="row pt-5 mt-5 border-top align-items-center justify-content-between">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="text-secondary mb-0">&copy; 2026 AQUATECH Engineering. All rights reserved.</p>
+        </div>
+        
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="scroll-top" class="scroll-top" aria-label="Back to Top">
+    <i data-lucide="chevron-up"></i>
+  </button>
+
+  <!-- JS CDNs: Bootstrap 5, Three.js, Lucide Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Custom JS -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>

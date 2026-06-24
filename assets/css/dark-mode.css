@@ -167,3 +167,8 @@
 [data-theme="dark"] .btn-close {
   filter: invert(1) grayscale(100%) brightness(200%);
 }
+
+/* Custom background for Why Choose Us section */
+[data-theme="dark"] .solid-theme-bg {
+  background-color: #000000 !important;
+}
