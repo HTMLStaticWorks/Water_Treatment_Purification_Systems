@@ -42,7 +42,11 @@
    Global Bootstrap Utility Fixes
    ============================ */
 
-/* Flip LTR Bootstrap's hardcoded text alignment utilities */
+/* Fix offcanvas close button in RTL */
+[dir="rtl"] .offcanvas-header .btn-close {
+  margin-right: auto !important;
+  margin-left: -0.5rem !important;
+}
 [dir="rtl"] .text-start {
   text-align: right !important;
 }
@@ -132,6 +136,15 @@
 
 [dir="rtl"] .solution-panel {
   text-align: right;
+}
+
+[dir="rtl"] .solution-panel .solution-panel-tag {
+  display: block;
+  text-align: center;
+}
+
+[dir="rtl"] .solution-panel h3 {
+  text-align: center;
 }
 
 /* Timeline Components RTL mirroring */
